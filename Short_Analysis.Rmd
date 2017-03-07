@@ -1,0 +1,62 @@
+---
+title: "Short Analysis Report"
+author: "Kirthana Ganeshan"
+date: "March 6, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r reading_gapminder}
+# Read in cleaned gapminder file
+gapM <- read.table(file = "output/combined_gapMinder.tsv" , sep = "\t", header = TRUE)
+```
+
+
+## CHINA
+```{r reading_china}
+# Select data for China and plot year and GDP
+China <- gapM[gapM$country == "China",]
+plot(x=China$year, y=China$gdpPercap, main = "CHINA", xlab = "YEAR", ylab = "GDP Per Capita")
+```
+
+## CHILE
+
+```{r reading_chile}
+# Select data for Chile and plot year and GDP
+Chile <- gapM[gapM$country == "Chile",]
+plot(x=Chile$year, y=Chile$gdpPercap, main = "CHILE", xlab = "YEAR", ylab = "GDP Per Capita")
+```
+
+## COLOMBIA
+```{r reading_colombia}
+# Select data for Colombia and plot year and GDP
+Colombia <- gapM[gapM$country == "Colombia",]
+plot(x=Colombia$year, y=Colombia$gdpPercap, main = "COLOMBIA", xlab = "YEAR", ylab = "GDP Per Capita")
+```
+
+
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
